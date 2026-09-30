@@ -221,12 +221,17 @@ def main():
     # > Define o tamanho da janela
     janela.geometry('1000x400')
 
+    # columnconfigure > Configura qual coluna deve crescer pros lados
+    # 1 > Indice da coluna a ser configurada
+    # weight=1 > Peso dessa coluna: quanto do espaço extra ela recebe
+    janela.columnconfigure(1, weight=1)
+
     ########## LABEL ##########
     label_caminho = Label(
         text='Caminho:',
         font='Arial 17'
     )
-    label_caminho.grid(row=0, column=0)
+    label_caminho.grid(row=0, column=0, sticky='e')
     ###########################
 
     ########## ENTRY ##########
@@ -234,7 +239,7 @@ def main():
         font='Arial 17',
         width=29
     )
-    entry_caminho.grid(row=0, column=1, sticky='ns')
+    entry_caminho.grid(row=0, column=1, sticky='nsw')
     ###########################
 
     ########## BUTTON ##########
@@ -255,7 +260,7 @@ def main():
         fg='white',
         command=lambda: controller(entry_caminho, treeview)
     )
-    button_iniciar.grid(row=0, column=3)
+    button_iniciar.grid(row=0, column=3, padx=(10, 10))
     ############################
 
     # > Cria uma instancia da classe Style na variavel estilo_treeview que vai armazenar as configurações de cores, fontes, temas, etc
@@ -284,7 +289,7 @@ def main():
         treeview.heading(idd, text=idd)
 
     # > Define a posição do treeview e a largura que o widget vai ocupar
-    treeview.grid(row=1, column=0, columnspan=4)
+    treeview.grid(row=1, column=0, columnspan=4, pady=(10, 0))
 
     # > Chama a função responsável por verificar a integridade do arquivo e passa o treeview para a função
     ver_integridade_arquivo(treeview)
