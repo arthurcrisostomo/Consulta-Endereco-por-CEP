@@ -5,7 +5,7 @@ com CEPs, consulta o endereço de cada um em buscacep.com.br e exibe os
 resultados em uma tabela. O histórico é salvo em `~/historico.txt`.
 
 ## Como usar
-1. Baixe o `.exe` na aba **Releases**.
+1. Baixe o `.exe` na pasta **executavel**.
 2. Clique em "Selecionar Arquivo" e escolha um .txt com um CEP por linha.
 3. Clique em "Iniciar".
 
